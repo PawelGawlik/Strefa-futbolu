@@ -1,0 +1,189 @@
+body{
+    font-family: cursive;
+    font-size: 1.2vw;
+}
+.c{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    height: 150vw;
+    border: none;
+    width: 98vw;
+    margin-top: 2vw;
+}
+form, div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 0.36vw solid green;
+    width: 50vw;
+    align-items: center;
+    border-radius: 0.72vw;
+    height: 100%;
+}
+div{
+    width: 40vw;
+    height: 14.29vw;
+    border-width: 0.14vw;
+}
+.a{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95vw;
+    border: none;
+}
+.b, .c>div{
+    border-width: 0.36vw;
+}
+input, button{
+    width: 50%;
+    font-family: cursive;
+    font-size: 75%;
+}
+input[type='file']{
+    margin-left: 6.43vw;
+}
+input[name="strz"]{
+    display: none;
+}
+textarea{
+    display: none;
+}
+img{
+    width: 21.43vw;
+    height: 21.43vw;
+}
+.d{
+    border: none;
+    height: 7.14vw;
+}
+.e{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border: none;
+}
+input[type='radio']{
+    width: 10%;
+}
+input[type='number']{
+    width: 30%;
+    height: 90%;
+    border-width: 1px;
+    box-sizing: border-box;
+}
+input[type="color"]{
+    width: 33%;
+    height: 90%;
+    padding: 0;
+}
+select{
+    height: 90%;
+    font-size: 80%;
+}
+div>textarea, .news>textarea{
+    display: block;
+    width: 30vw;
+    height: 10.72vw;
+}
+ul{
+    margin: 0;
+}
+.f{
+    height: 35.71vw;
+}
+.news{
+    width: 40vw;
+    height: 35.71vw;
+    margin-top: 2vw;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.a>p{
+    font-size: 2vw;
+}
+.c>div{
+    justify-content: flex-start;
+}
+p{
+    margin: 0.3vw;
+    font-size: 1.4vw;
+    text-align: justify;
+}
+li{
+    height: 1.81vw;
+    margin-bottom: 0.5vw;
+}
+.hidden{
+    display: none;
+}
+@media all and (max-width: 700px){
+    ul{
+        padding-left: 20px;
+    }
+}
+@media all and (max-width: 500px){
+    .c{
+        height: 600vw;
+    }
+    form{
+        height: 50%;
+        width: 90%;
+    }
+    form>div{
+        width: 70%;
+        height: 40vw;
+    }
+    .hidden{
+        display: block; 
+        width: 90%;
+        margin-bottom: 1vw;
+        height: 28vw;
+    }
+    .visible{
+        display: none;
+    }
+    .news{
+        width: 90%;
+        margin-top: 1vw;
+        height: 50vw;
+    }
+    div>textarea, .news>textarea{
+        width: 70%;
+    }
+    .hidden>p{
+        font-size: 2.88vw;
+    }
+    p, label{
+        font-size: 3vw;
+    }
+    input, button{
+        height: 4vw;
+        font-size: 1.5vw;
+    }
+    li{
+        height: 3vw;
+        font-size: 2vw;
+    }
+    .f{
+        height: 45vw;
+    }
+    li>button{
+        height: 3.5vw;
+        padding: 0;
+    }
+    input[type="file"]{
+        margin-left: 17vw;
+        width: 70%
+    }
+    .e{
+        font-size: 2vw;
+    }
+    a{
+        font-size: 2vw;
+    }
+}

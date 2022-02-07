@@ -1,0 +1,167 @@
+.strz{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 39.44vw;
+}
+.strz1{
+    width: 21.4vw;
+}
+.a{
+    width: 21.4vw;
+}
+.b{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 21.93vw;
+}
+.c{
+    display: flex;
+    flex-direction: column;
+    width: 58.57vw;
+}
+p, label, input, a{
+    height: 4.39vw;
+    margin: 0;
+    font-size: 3.45vw;
+    font-family: cursive;
+    text-align: center;
+}
+.d{
+    width: 58.57vw;
+}
+.e{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 14.29vw;
+}
+h1{
+    height: 14.29vw;
+    margin: 0;
+    font-size: 8.97vw;
+    font-family: cursive;
+    color: green;
+}
+.f{
+    width: 14.29vw;
+}
+.j{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 34.29vw;
+}
+.h{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width 33%;
+}
+label{
+    padding-top: 1vw;
+    font-size: 1.43vw;
+}
+input{
+    width: 22.5vw;
+    font-size: 2.15vw;
+    font-family: cursive;
+}
+a{
+    font-size: 2.15vw;
+    text-decoration: none;
+    color: black;
+}
+.stopka{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+}
+.stopka>p{
+    font-size: 2.5vw;
+    height: 3vw;
+}
+button{
+    font-family: cursive;
+    height: 2vw;
+    font-size: 1vw;
+}
+.uwaga{
+    position: absolute;
+    top: 90vw;
+    left: 30vw;
+    z-index: 2;
+    width: 14vw;
+    font-family: cursive;
+    font-size: 2vw;
+}
+@media all and (max-width: 849px){
+    p{
+        letter-spacing: -1px;
+    }
+}
+@media all and (max-width: 474px){
+    h1{
+        letter-spacing: -1px;
+    }
+}
+@media all and (max-width: 520px){
+    button{
+        padding: 0;
+        border-width: 1px;
+        font-size: 0.7vw;
+    }
+}
+@media all and (max-width: 550px){
+    label{
+        padding-top: 0;
+    }
+}
+@media all and (max-width: 425px){
+    .j{
+        flex-wrap: wrap;
+        height: 200vw;
+    }
+    .h{
+        align-items: center;
+        width: 100%;
+        height: 35%;
+    }
+    .i{
+        height: 45%;
+        margin-bottom: 20px;
+    }
+    .g{
+        height: 20%;
+    }
+    button{
+        width: 80%;
+        height: 15%;
+        font-size: 2vw;
+    }
+    label, input, a{
+        width: 80%;
+        height: 20%;
+        font-size: 4vw;
+    }
+    label{
+        padding-top: 3vw;
+    }
+    a{
+        height: 20%;
+        font-size: 3vw;
+    }
+    .h>p{
+        font-size: 5vw;
+    }
+    .g>p, .h>p{
+        height: 8%;
+    }
+    .uwaga{
+        top: 130vw;
+        left: 60vw;
+        font-size: 3.5vw;
+        width: 20vw;
+    }
+}

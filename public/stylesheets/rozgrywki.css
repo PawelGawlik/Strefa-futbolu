@@ -1,0 +1,72 @@
+body{
+    position: relative;
+    height: 67vw;
+}
+.mecze, .mecze2{
+    position: absolute;
+    width: 92%;
+    top: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 47vw;
+    justify-content: space-between;
+    left: 50%;
+    transform: translateX(-50%);    
+}
+.mecz{
+    width: 30%;
+    text-align: center;
+    font-family: cursive;
+    font-size: 2vw;
+    color: green;
+    border-color: green;
+    border-radius: 1.2vw;
+    border-width: 2px;
+    padding: 3px;
+    border-style: solid;
+    cursor: text;
+    height: 3vw;
+}
+.mecz2{
+    opacity: 0;
+    z-index: 2;
+}
+.mecz3{
+    width: 100%;
+    text-align: center;
+    font-family: cursive;
+    font-size: 2vw;
+    color: green;
+    position: absolute;
+    top: 300px;
+}
+button{
+    position: absolute;
+    top: 75vw;
+}
+.tablica{
+    position: absolute;
+    top: 80vw;
+}
+table{
+    border-collapse: collapse;
+    border: 5px solid green;
+    border-radius: 3vw;
+    width: 92%;
+    min-height: 40vw;
+    text-align: center;
+}
+td{
+    border: 2px solid green;
+    padding: 0;
+}
+input{
+    width: 20%;
+    height: 80%;
+    text-align: center;
+}
+.wyniki{
+    position: absolute;
+    top: 125vw;
+}

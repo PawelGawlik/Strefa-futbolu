@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Strona Admina</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Kreator stron piłkarskich">
+        <meta name="author" content="Paweł Gawlik">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+        <link rel="icon" href="./images/sf.jpg">
+        <link rel="stylesheet" href="./stylesheets/admin.css">
+        <script src="./javascripts/jquery-3.5.1.js"></script>
+        <script src="./javascripts/admin.js" defer></script>
+    </head>
+    <body>
+        <div class="a">
+            <img src="images/sf.jpg">
+            <p></p>
+            <div class="b">
+                <a href="/main1">Przejdź na stronę</a>
+                <a href="/main2">Wyloguj</a>
+                <a href="/rozgrywki.html">Terminarz automatyczny</a>
+            </div>
+        </div>
+        <div class="c">
+        <div class="hidden">
+            <p>Poniżej znajduje się formularz tworzący Twoją stronę. Nie musisz wypełniać wszystkich podpunktów. Jeśli chcesz dokonać zmiany na stronie, wystarczy wypełnić dany podpunkt. Każdą zmianę potwierdzasz naciskając przycisk "Wygeneruj stronę". W górnym prawym rogu znajduje się link do Twojej witryny. Jeśli chcesz umieścić na stronie wiadomość, wykorzystaj formularz na dole.</p>
+        </div>
+        <form method="post">
+            <div>
+                <p>Autor strony</p>
+                <input name="autor">
+            </div>
+            <div>
+                <label>Tytuł strony</label>
+                <input name="title">
+                <p>Powyżej wpisz nazwę klubu, rozgrywek lub swoje imię i nazwisko</p>
+            </div>
+            <div>
+                <label>Czego dotyczy strona?</label>
+                <div class="d">
+                    <div class="e">
+                        <input type="radio" name="temat" value="O klubie">Klubu
+                    </div>
+                    <div class="e">
+                        <input type="radio" name="temat" value="O mnie">Osoby
+                    </div>
+                    <div class="e">
+                        <input type="radio" name="temat" value="O rozgrywkach">Rozgrywek
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label>Opisz siebie, klub lub rozgrywki</label>
+                <textarea name="opis"></textarea>
+            </div>
+            <div>
+                <label>Logo/zdjęcie</label>
+                <input type="file" name="logo">
+                <button>Potwierdź nowe logo/zdjęcie</button>
+            </div>
+            <div class="f">
+                <label>Style</label>
+                <ul>
+                    <li>Rozmiar czcionki tytułu---<input type="number" name="fontsize" value="7"></li>
+                    <li>Kolor czcionki tytułu---<input type="color" name="fontcolor"></li>
+                    <li>Styl czcionki tytułu---<select name="fontstyle">
+                            <option>serif</option>
+                            <option>sans-serif</option>
+                            <option>monospace</option>
+                            <option selected>cursive</option>
+                            <option>fantasy</option>
+                        </select></li>
+                    <li>Tło tytułu i loga---<input type="color" name="bgcolor" value="#ffffff"></li>
+                    <li>Tło całej strony---<input type="color" name="bgcolor2" value="#ffffff"></li>
+                    <li>Styl czcionki na stronie---<select name="fontstyle2">
+                            <option>serif</option>
+                            <option>sans-serif</option>
+                            <option>monospace</option>
+                            <option selected>cursive</option>
+                            <option>fantasy</option>
+                        </select></li>
+                    <li>Strzałka na stronie---<button>Usuń</button></li>
+                    <li>Tytuł opisu- rozmiar czcionki---<input type="number" name="fontsize2" value="3"></li>
+                    <li>Tytuł opisu- kolor czcionki---<input type="color" name="fontcolor2"></li>
+                    <li>Rozmiar czcionki na stronie---<input type="number" name="fontsize3" value="2"></li>
+                    <li>Kolor czcionki na stronie---<input type="color" name="fontcolor3"></li>
+                </ul>
+            </div>
+            <input name="strz" value="../images/strz2.jpg">
+            <textarea name="tekst"></textarea>
+            <button type="submit">Wygeneruj stronę</button>
+        </form>
+        <div class="visible">
+            <p>Po lewej stronie znajduje się formularz tworzący Twoją stronę. Nie musisz wypełniać wszystkich podpunktów. Jeśli chcesz dokonać zmiany na stronie, wystarczy wypełnić dany podpunkt. Każdą zmianę potwierdzasz naciskając przycisk "Wygeneruj stronę". Powyżej znajduje się link do Twojej witryny. Jeśli chcesz umieścić na stronie wiadomość, wykorzystaj formularz poniżej.</p>
+        </div>
+        <form action="/news" method="post" class="news">
+            <label>Tytuł wiadomości</label>
+            <input name="newstitle">
+            <label>Wstęp na stronę główną</label>
+            <textarea name="newsmain"></textarea>
+            <label>Wiadomość</label>
+            <textarea name="news"></textarea>
+            <button type="submit">Umieść na stronie</button>
+        </form>
+        </div>
+    </body>
+</html> 
