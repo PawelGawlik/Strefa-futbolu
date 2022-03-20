@@ -1,0 +1,17 @@
+html{
+    height: 100vh;
+}
+body{
+    font-family: cursive;
+    margin-left: 25%;
+    margin-top: 10%;
+    font-size: 3vw;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: green;
+    font-size: 1.3em;
+}
