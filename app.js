@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 const config = require('./config.js');
 const cookieParser = require('cookie-parser');
 app.set('view engine','pug');
-app.listen(2000,'127.0.0.1',() => {
+app.listen(8080,'https://pawelgawlik.github.io/Strefa-futbolu/',() => {
     console.log("Serwer wystartował...");
 })
 //app.use(express.static(path.join(__dirname, 'public')));
