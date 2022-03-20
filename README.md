@@ -1,4 +1,4 @@
-# Strefa-futbolu
-Strona dla fanów piłki nożnej
+# Strefa futbolu
 
-[Wejdź na stronę](./public/index.html)
+
+Kreator stron piłkarskich. Pozwala stworzyć własną stronę dotyczącą rozgrywek czy ulubionej drużyny.
