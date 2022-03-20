@@ -1,4 +1,4 @@
-#Strefa futbolu
+# Strefa futbolu
 
 Zapraszam na kilka stron aplikacji:
 
