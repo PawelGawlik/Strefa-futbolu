@@ -9,7 +9,7 @@ const index = require('./routes/index.js');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 app.set('view engine', 'pug');
-app.listen(2000, '127.0.0.1', () => {
+app.listen(process.env.PORT, 'https://strefafutbolu.herokuapp.com/', () => {
     console.log("Serwer wystartował...");
 })
 //app.use(express.static(path.join(__dirname, 'public')));
