@@ -9,10 +9,10 @@ const index = require('./routes/index.js');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 app.set('view engine', 'pug');
-app.listen(process.env.PORT || 2000, process.env.HOST || 'strefafutbolu.herokuapp.com', () => {
+app.listen(process.env.PORT, process.env.HOST || 'strefafutbolu.herokuapp.com', () => {
     console.log("Serwer wystartował...");
 })
-console.log(process.env.PORT);
+console.log(process.env.HOST);
 //app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
