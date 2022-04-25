@@ -9,7 +9,7 @@ const index = require('./routes/index.js');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 app.set('view engine', 'pug');
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT, 'git.heroku.com/strefafutbolu.git', () => {
     console.log("Serwer wystartował...");
 })
 console.log(process);
