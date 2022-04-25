@@ -12,7 +12,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 app.set('view engine', 'pug');
 http.createServer(app).listen(process.env.PORT);
-https.createServer(app).listen();
+https.createServer(app).listen(443);
 //app.listen(process.env.PORT, () => {
 //console.log("Serwer wystartował...");
 //})
