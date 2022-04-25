@@ -1,4 +1,6 @@
 const express = require('express');
+const http = require('http');
+const https = require('https');
 const path = require('path');
 const cookieSession = require('cookie-session');
 const app = express();
@@ -9,10 +11,11 @@ const index = require('./routes/index.js');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 app.set('view engine', 'pug');
-app.listen(process.env.PORT, 'git.heroku.com/strefafutbolu.git', () => {
-    console.log("Serwer wystartował...");
-})
-console.log(process);
+http.createServer(app).listen(process.env.PORT);
+https.createServer(app).listen();
+//app.listen(process.env.PORT, () => {
+//console.log("Serwer wystartował...");
+//})
 //app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

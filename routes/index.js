@@ -14,6 +14,7 @@ const funkcja1 = (par1) => {
         })
     })
     par1.get('/', (req, res, next) => {
+        console.log(req.protocol);
         if (req.cookies.b !== "zapisany") {
             res.cookie('b', 'zapisany');
             client.connect(() => {
