@@ -9,7 +9,7 @@ const index = require('./routes/index.js');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 app.set('view engine', 'pug');
-app.listen(process.env.PORT || 2000, process.env.HOST || '127.0.0.1', () => {
+app.listen(process.env.PORT || 2000, process.env.HOST || 'strefafutbolu.herokuapp.com', () => {
     console.log("Serwer wystartował...");
 })
 console.log(process.env.PORT);
