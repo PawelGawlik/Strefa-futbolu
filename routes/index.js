@@ -13,8 +13,8 @@ const funkcja1 = (par1) => {
             id2 = data.length;
         })
     })
+    client.close();
     par1.get('/', (req, res, next) => {
-        console.log(req.protocol);
         if (req.cookies.b !== "zapisany") {
             res.cookie('b', 'zapisany');
             client.connect(() => {
@@ -27,6 +27,7 @@ const funkcja1 = (par1) => {
                     })
                 })
             })
+            client.close();
         }
         if (req.session.sesja) {
             res.redirect('/admin.html');
@@ -372,6 +373,7 @@ const funkcja1 = (par1) => {
                 res.json(data[0]);
             })
         })
+        //client.close();
     })
     par1.post('/rejestracja', (req, res) => {
         client.connect(() => {
