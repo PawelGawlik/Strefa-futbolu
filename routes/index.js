@@ -7,12 +7,12 @@ const funkcja1 = (par1) => {
     const users = db.collection('users');
     const main = db.collection('main');
     let user = "";
-    let id2;
-    client.connect(() => {
-        users.find().toArray((err, data) => {
-            id2 = data.length;
-        })
-    })
+    let id2 = 0;
+    //client.connect(() => {
+    // users.find().toArray((err, data) => {
+    //id2 = data.length;
+    //})
+    //})
     client.close();
     par1.get('/', (req, res, next) => {
         if (req.cookies.b !== "zapisany") {
