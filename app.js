@@ -12,10 +12,10 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 app.set('view engine', 'pug');
 //http.createServer(app).listen(process.env.PORT);
-https.createServer(app).listen(process.env.PORT, 'strefafutbolu.herokuapp.com');
-//app.listen(process.env.PORT, () => {
-//console.log("Serwer wystartował...");
-//})
+//https.createServer(app).listen(process.env.PORT, 'strefafutbolu.herokuapp.com');
+app.listen(process.env.PORT, () => {
+    console.log("Serwer wystartował...");
+})
 //app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
