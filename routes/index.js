@@ -369,7 +369,7 @@ const funkcja1 = (par1) => {
     par1.get('/odw', (req, res) => {
         client.connect(() => {
             main.find().toArray((err, data) => {
-                res.send(data[0]);
+                res.json(data[0]);
             })
         })
     })
