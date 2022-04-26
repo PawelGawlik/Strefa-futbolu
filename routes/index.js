@@ -368,7 +368,9 @@ const funkcja1 = (par1) => {
         })
     })
     par1.get('/odw', (req, res) => {
+        console.log("bleble");
         client.connect(() => {
+            console.log("bleble2");
             main.find().toArray((err, data) => {
                 res.json(data[0]);
             })

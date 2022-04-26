@@ -1,6 +1,7 @@
 const express = require('express');
 const http = require('http');
 const https = require('https');
+const fetch = require('node-fetch');
 const path = require('path');
 const cookieSession = require('cookie-session');
 const app = express();
