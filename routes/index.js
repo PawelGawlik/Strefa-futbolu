@@ -16,8 +16,8 @@ const funkcja1 = async (par1) => {
     client.connect(() => {
         users.find().toArray((err, data) => {
             id2 = data.length;
+            client.close();
         })
-        client.close();
     })
     //client.close();
     par1.get('/', (req, res, next) => {
@@ -377,8 +377,8 @@ const funkcja1 = async (par1) => {
         client.connect(() => {
             main.find().toArray((err, data) => {
                 res.json(data[0]);
+                client.close();
             })
-            client.close();
         })
         //client.close();
     })
