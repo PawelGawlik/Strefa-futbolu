@@ -6,9 +6,14 @@ const funkcja1 = async (par1) => {
     const db = client.db('sf');
     const users = db.collection('users');
     const main = db.collection('main');
+    await client.connect();
+    users.find().toArray((err, data) => {
+        console.log(data);
+    })
+    client.close();
     let user = "";
     let id2;
-    await client.connect(() => {
+    client.connect(() => {
         users.find().toArray((err, data) => {
             id2 = data.length;
         })
