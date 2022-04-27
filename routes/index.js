@@ -2,14 +2,14 @@ const mongo = require('mongodb');
 const config = require('../config.js');
 const client = new mongo.MongoClient(config.db, { useNewUrlParser: true });
 const path = require('path');
-const funkcja1 = (par1) => {
+const funkcja1 = async (par1) => {
     const db = client.db('sf');
     const users = db.collection('users');
     const main = db.collection('main');
     let user = "";
     let id2;
-    client.connect(() => {
-        users.find({ login: "Pawgaw" }).toArray((err, data) => {
+    await client.connect(() => {
+        users.find().toArray((err, data) => {
             id2 = data.length;
         })
     })
