@@ -7,7 +7,7 @@ const funkcja1 = async (par1) => {
     const users = db.collection('users');
     const main = db.collection('main');
     await client.connect();
-    users.find().toArray((err, data) => {
+    await users.find().toArray((err, data) => {
         console.log(data);
     })
     client.close();
