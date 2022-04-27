@@ -1,7 +1,6 @@
 const mongo = require('mongodb');
 const config = require('../config.js');
-//const client = new mongo.MongoClient(config.db, { useNewUrlParser: true });
-const client = new mongo.MongoClient(config.db, { useUnifiedTopology: true });
+const client = new mongo.MongoClient(config.db, { useNewUrlParser: true });
 const path = require('path');
 const funkcja1 = (par1) => {
     const db = client.db('sf');
@@ -10,7 +9,7 @@ const funkcja1 = (par1) => {
     let user = "";
     let id2;
     client.connect(() => {
-        users.find().toArray((err, data) => {
+        users.find({ login: "Pawgaw" }).toArray((err, data) => {
             id2 = data.length;
         })
     })
@@ -369,9 +368,7 @@ const funkcja1 = (par1) => {
         })
     })
     par1.get('/odw', (req, res) => {
-        console.log("bleble");
         client.connect(() => {
-            console.log("bleble2");
             main.find().toArray((err, data) => {
                 res.json(data[0]);
             })
