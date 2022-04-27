@@ -1,6 +1,7 @@
 const mongo = require('mongodb');
 const config = require('../config.js');
-const client = new mongo.MongoClient(config.db, { useNewUrlParser: true });
+//const client = new mongo.MongoClient(config.db, { useNewUrlParser: true });
+const client = new mongo.MongoClient(config.db, { useUnifiedTopology: true });
 const path = require('path');
 const funkcja1 = (par1) => {
     const db = client.db('sf');
