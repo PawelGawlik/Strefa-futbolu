@@ -378,6 +378,7 @@ const funkcja1 = async (par1) => {
             main.find().toArray((err, data) => {
                 res.json(data[0]);
             })
+            client.close();
         })
         //client.close();
     })
