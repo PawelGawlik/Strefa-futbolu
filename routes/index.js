@@ -2,7 +2,7 @@ const mongo = require('mongodb');
 const config = require('../config.js');
 const client = new mongo.MongoClient(config.db, { useNewUrlParser: true });
 const path = require('path');
-const funkcja1 = async (par1) => {
+const funkcja1 = (par1) => {
     const db = client.db('sf');
     const users = db.collection('users');
     const main = db.collection('main');
@@ -19,7 +19,6 @@ const funkcja1 = async (par1) => {
             client.close();
         })
     })
-    //client.close();
     par1.get('/', (req, res, next) => {
         if (req.cookies.b !== "zapisany") {
             res.cookie('b', 'zapisany');
@@ -31,9 +30,9 @@ const funkcja1 = async (par1) => {
                             odwiedziny: odw2 + 1
                         }
                     })
+                    client.close();
                 })
             })
-            //client.close();
         }
         if (req.session.sesja) {
             res.redirect('/admin.html');
@@ -44,10 +43,9 @@ const funkcja1 = async (par1) => {
     par1.get('/links.pug', (req, res, next) => {
         client.connect(() => {
             users.find({ title: new RegExp(req.query.fraza.trim(), "i") }).toArray((err, data) => {
-                console.log(data);
                 res.render('links', { data });
+                client.close();
             })
-            //res.render('links', {links});
         })
     })
     par1.get('/admin.html', (req, res, next) => {
@@ -101,6 +99,8 @@ const funkcja1 = async (par1) => {
                             tabela: "",
                             odwiedziny: 0
                         }
+                    }, () => {
+                        client.close();
                     });
                 }
             })
@@ -136,6 +136,7 @@ const funkcja1 = async (par1) => {
                         f: data[0].autor,
                         f2: data[0].odwiedziny
                     })
+                    client.close();
                 })
             })
         }
@@ -160,7 +161,6 @@ const funkcja1 = async (par1) => {
                 })
             }
             users.find({ id2: liczba }).toArray((err, data) => {
-                console.log(data);
                 const a = data[0].title;
                 const b = data[0].tekst;
                 const c = data[0].temat;
@@ -179,11 +179,9 @@ const funkcja1 = async (par1) => {
                 const f = data[0].autor;
                 const f2 = data[0].odwiedziny;
                 res.render('main', { a, b, c, d, e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, f, f2 });
+                client.close();
             })
         })
-        //a = data[0].title;
-        //b = tab1[0].logo;
-        // res.render('main', {a, b});
     })
     par1.post('/admin.html', (req, res) => {
         if (user === "") {
@@ -199,6 +197,8 @@ const funkcja1 = async (par1) => {
                             $set: {
                                 [zm]: req.body[zm]
                             }
+                        }, () => {
+                            client.close();
                         })
                     })
                 }
@@ -210,6 +210,7 @@ const funkcja1 = async (par1) => {
         client.connect(() => {
             users.find(user).toArray((err, data) => {
                 res.send(data[0]);
+                client.close();
             })
         })
     })
@@ -234,10 +235,13 @@ const funkcja1 = async (par1) => {
                         [news4]: req.body.news,
                         [news5]: 0
                     }
+                }, () => {
+                    res.redirect('back');
+                    client.close();
                 })
             })
         })
-        res.redirect('back');
+        //res.redirect('back');
     })
     par1.get('/news/:wiad', (req, res) => {
         client.connect(() => {
@@ -261,6 +265,7 @@ const funkcja1 = async (par1) => {
                 o[1] = data[0][newstext];
                 o[2] = data[0][komentarze];
                 res.send(o);
+                client.close();
             })
         })
     })
@@ -289,10 +294,13 @@ const funkcja1 = async (par1) => {
                             [kom4]: req.body.nick,
                             [kom5]: req.body.koment
                         }
+                    }, () => {
+                        res.redirect('back');
+                        client.close();
                     })
                 })
             })
-            res.redirect('back');
+            //res.redirect('back');
         }
     })
     par1.post('/terminarz', (req, res) => {
@@ -302,6 +310,8 @@ const funkcja1 = async (par1) => {
                 $set: {
                     terminarz: terminarz
                 }
+            }, () => {
+                client.close();
             })
         })
     })
@@ -312,18 +322,20 @@ const funkcja1 = async (par1) => {
                 tz[0] = data[0].terminarz;
                 tz[1] = data[0].wyniki;
                 res.json(tz);
+                client.close();
             })
         })
     })
     par1.post('/terminarz3', (req, res) => {
         const wynik = req.body;
-        console.log(wynik);
         client.connect(() => {
             users.updateOne(user, {
                 $set: {
                     wyniki: wynik,
                     rewanze: 0
                 }
+            }, () => {
+                client.close();
             })
         })
     })
@@ -331,6 +343,7 @@ const funkcja1 = async (par1) => {
         client.connect(() => {
             users.find(user).toArray((err, data) => {
                 res.json(data[0].wyniki);
+                client.close();
             })
         })
     })
@@ -340,6 +353,8 @@ const funkcja1 = async (par1) => {
                 $set: {
                     rewanze: 1
                 }
+            }, () => {
+                client.close();
             })
         })
     })
@@ -347,6 +362,7 @@ const funkcja1 = async (par1) => {
         client.connect(() => {
             users.find(user).toArray((err, data) => {
                 res.json(data[0].rewanze);
+                client.close();
             })
         })
     })
@@ -356,6 +372,8 @@ const funkcja1 = async (par1) => {
                 $set: {
                     tabela: req.body
                 }
+            }, () => {
+                client.close();
             })
         })
     })
@@ -363,6 +381,7 @@ const funkcja1 = async (par1) => {
         client.connect(() => {
             users.find(user).toArray((err, data) => {
                 res.json(data[0].tabela);
+                client.close();
             })
         })
     })
@@ -370,6 +389,7 @@ const funkcja1 = async (par1) => {
         client.connect(() => {
             users.find(user).toArray((err, data) => {
                 res.send(data[0]);
+                client.close();
             })
         })
     })
@@ -380,28 +400,31 @@ const funkcja1 = async (par1) => {
                 client.close();
             })
         })
-        //client.close();
     })
     par1.post('/rejestracja', (req, res) => {
         client.connect(() => {
             const rejestracja = req.body;
             users.find(rejestracja).toArray((err, data) => {
                 res.send(data);
+                client.close();
             })
         })
     })
     par1.post('/log', (req, res) => {
-        user = {
-            login: req.body.login2,
-            password: req.body.password3
-        }
-        users.find(user).toArray((err, data) => {
-            if (!data.length) {
-                res.redirect('/error2.html');
-            } else {
-                req.session.sesja = 1;
-                res.redirect('/admin.html');
+        client.connect(() => {
+            user = {
+                login: req.body.login2,
+                password: req.body.password3
             }
+            users.find(user).toArray((err, data) => {
+                if (!data.length) {
+                    res.redirect('/error2.html');
+                } else {
+                    req.session.sesja = 1;
+                    res.redirect('/admin.html');
+                }
+                client.close();
+            })
         })
     })
 }
