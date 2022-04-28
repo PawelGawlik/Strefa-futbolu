@@ -6,17 +6,17 @@ const funkcja1 = async (par1) => {
     const db = client.db('sf');
     const users = db.collection('users');
     const main = db.collection('main');
-    await client.connect();
-    users.find().toArray((err, data) => {
-        console.log(data);
-    })
+    //await client.connect();
+    //users.find().toArray((err, data) => {
+    // console.log(data);
+    //})
     let user = "";
     let id2;
-    //client.connect(() => {
-    //users.find().toArray((err, data) => {
-    //id2 = data.length;
-    // })
-    // })
+    client.connect(() => {
+        users.find().toArray((err, data) => {
+            id2 = data.length;
+        })
+    })
     par1.post('/log', (req, res) => {
         client.connect(() => {
             user = {
