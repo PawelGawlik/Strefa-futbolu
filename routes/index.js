@@ -16,7 +16,22 @@ const funkcja1 = (par1) => {
     client.connect(() => {
         users.find().toArray((err, data) => {
             id2 = data.length;
-            client.close();
+        })
+    })
+    par1.post('/log', (req, res) => {
+        client.connect(() => {
+            user = {
+                login: req.body.login2,
+                password: req.body.password3
+            }
+            users.find(user).toArray((err, data) => {
+                if (!data.length) {
+                    res.redirect('/error2.html');
+                } else {
+                    req.session.sesja = 1;
+                    res.redirect('/admin.html');
+                }
+            })
         })
     })
     par1.get('/', (req, res, next) => {
@@ -30,7 +45,6 @@ const funkcja1 = (par1) => {
                             odwiedziny: odw2 + 1
                         }
                     })
-                    client.close();
                 })
             })
         }
@@ -44,7 +58,6 @@ const funkcja1 = (par1) => {
         client.connect(() => {
             users.find({ title: new RegExp(req.query.fraza.trim(), "i") }).toArray((err, data) => {
                 res.render('links', { data });
-                client.close();
             })
         })
     })
@@ -99,9 +112,7 @@ const funkcja1 = (par1) => {
                             tabela: "",
                             odwiedziny: 0
                         }
-                    }, () => {
-                        client.close();
-                    });
+                    })
                 }
             })
         })
@@ -136,7 +147,6 @@ const funkcja1 = (par1) => {
                         f: data[0].autor,
                         f2: data[0].odwiedziny
                     })
-                    client.close();
                 })
             })
         }
@@ -179,7 +189,7 @@ const funkcja1 = (par1) => {
                 const f = data[0].autor;
                 const f2 = data[0].odwiedziny;
                 res.render('main', { a, b, c, d, e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, f, f2 });
-                client.close();
+
             })
         })
     })
@@ -190,27 +200,25 @@ const funkcja1 = (par1) => {
             res.redirect('/error.html');
         }
         else {
-            for (const zm in req.body) {
-                if (req.body[zm] !== "") {
-                    client.connect(() => {
+            client.connect(() => {
+                for (const zm in req.body) {
+                    if (req.body[zm] !== "") {
                         users.updateOne(user, {
                             $set: {
                                 [zm]: req.body[zm]
                             }
-                        }, () => {
-                            client.close();
                         })
-                    })
+                    }
                 }
-            }
-            res.redirect('back');
+                res.redirect('back');
+            })
+            // res.redirect('back');
         }
     })
     par1.get('/style', (req, res, next) => {
         client.connect(() => {
             users.find(user).toArray((err, data) => {
                 res.send(data[0]);
-                client.close();
             })
         })
     })
@@ -235,13 +243,10 @@ const funkcja1 = (par1) => {
                         [news4]: req.body.news,
                         [news5]: 0
                     }
-                }, () => {
-                    res.redirect('back');
-                    client.close();
                 })
             })
         })
-        //res.redirect('back');
+        res.redirect('back');
     })
     par1.get('/news/:wiad', (req, res) => {
         client.connect(() => {
@@ -265,7 +270,6 @@ const funkcja1 = (par1) => {
                 o[1] = data[0][newstext];
                 o[2] = data[0][komentarze];
                 res.send(o);
-                client.close();
             })
         })
     })
@@ -294,13 +298,10 @@ const funkcja1 = (par1) => {
                             [kom4]: req.body.nick,
                             [kom5]: req.body.koment
                         }
-                    }, () => {
-                        res.redirect('back');
-                        client.close();
                     })
                 })
             })
-            //res.redirect('back');
+            res.redirect('back');
         }
     })
     par1.post('/terminarz', (req, res) => {
@@ -310,8 +311,6 @@ const funkcja1 = (par1) => {
                 $set: {
                     terminarz: terminarz
                 }
-            }, () => {
-                client.close();
             })
         })
     })
@@ -322,7 +321,6 @@ const funkcja1 = (par1) => {
                 tz[0] = data[0].terminarz;
                 tz[1] = data[0].wyniki;
                 res.json(tz);
-                client.close();
             })
         })
     })
@@ -334,8 +332,6 @@ const funkcja1 = (par1) => {
                     wyniki: wynik,
                     rewanze: 0
                 }
-            }, () => {
-                client.close();
             })
         })
     })
@@ -343,7 +339,6 @@ const funkcja1 = (par1) => {
         client.connect(() => {
             users.find(user).toArray((err, data) => {
                 res.json(data[0].wyniki);
-                client.close();
             })
         })
     })
@@ -353,8 +348,6 @@ const funkcja1 = (par1) => {
                 $set: {
                     rewanze: 1
                 }
-            }, () => {
-                client.close();
             })
         })
     })
@@ -362,7 +355,6 @@ const funkcja1 = (par1) => {
         client.connect(() => {
             users.find(user).toArray((err, data) => {
                 res.json(data[0].rewanze);
-                client.close();
             })
         })
     })
@@ -372,8 +364,6 @@ const funkcja1 = (par1) => {
                 $set: {
                     tabela: req.body
                 }
-            }, () => {
-                client.close();
             })
         })
     })
@@ -381,7 +371,6 @@ const funkcja1 = (par1) => {
         client.connect(() => {
             users.find(user).toArray((err, data) => {
                 res.json(data[0].tabela);
-                client.close();
             })
         })
     })
@@ -389,7 +378,6 @@ const funkcja1 = (par1) => {
         client.connect(() => {
             users.find(user).toArray((err, data) => {
                 res.send(data[0]);
-                client.close();
             })
         })
     })
@@ -397,7 +385,6 @@ const funkcja1 = (par1) => {
         client.connect(() => {
             main.find().toArray((err, data) => {
                 res.json(data[0]);
-                client.close();
             })
         })
     })
@@ -406,24 +393,6 @@ const funkcja1 = (par1) => {
             const rejestracja = req.body;
             users.find(rejestracja).toArray((err, data) => {
                 res.send(data);
-                client.close();
-            })
-        })
-    })
-    par1.post('/log', (req, res) => {
-        client.connect(() => {
-            user = {
-                login: req.body.login2,
-                password: req.body.password3
-            }
-            users.find(user).toArray((err, data) => {
-                if (!data.length) {
-                    res.redirect('/error2.html');
-                } else {
-                    req.session.sesja = 1;
-                    res.redirect('/admin.html');
-                }
-                client.close();
             })
         })
     })
