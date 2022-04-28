@@ -36,16 +36,16 @@ const funkcja1 = async (par1) => {
     par1.get('/', (req, res, next) => {
         if (req.cookies.b !== "zapisany") {
             res.cookie('b', 'zapisany');
-            client.connect(() => {
-                main.find().toArray((err, data) => {
-                    const odw2 = data[0].odwiedziny;
-                    main.updateOne({}, {
-                        $set: {
-                            odwiedziny: odw2 + 1
-                        }
-                    })
+            //client.connect(() => {
+            main.find().toArray((err, data) => {
+                const odw2 = data[0].odwiedziny;
+                main.updateOne({}, {
+                    $set: {
+                        odwiedziny: odw2 + 1
+                    }
                 })
             })
+            //})
         }
         if (req.session.sesja) {
             res.redirect('/admin.html');
@@ -381,11 +381,11 @@ const funkcja1 = async (par1) => {
         })
     })
     par1.get('/odw', (req, res) => {
-        client.connect(() => {
-            main.find().toArray((err, data) => {
-                res.json(data[0]);
-            })
+        //client.connect(() => {
+        main.find().toArray((err, data) => {
+            res.json(data[0]);
         })
+        // })
     })
     par1.post('/rejestracja', (req, res) => {
         client.connect(() => {
