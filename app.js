@@ -28,4 +28,4 @@ app.use(cookieSession({
 }))
 app.use(cookieParser());
 index(app);
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));

@@ -395,5 +395,6 @@ const funkcja1 = async (par1) => {
         })
         //})
     })
+    par1.use(express.static(path.join(__dirname, 'public')));
 }
 module.exports = funkcja1;
