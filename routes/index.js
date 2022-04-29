@@ -380,12 +380,14 @@ const funkcja1 = async (par1) => {
         })
         //})
     })
-    par1.get('/odw', (req, res) => {
+    par1.get('/odw', async (req, res) => {
         //client.connect(() => {
-        main.find().toArray((err, data) => {
-            res.json(data[0]);
-        })
+        // main.find().toArray((err, data) => {
+        // res.json(data[0]);
+        //})
         // })
+        const c = await main.find().toArray();
+        res.json(c[0]);
     })
     par1.post('/rejestracja', (req, res) => {
         //client.connect(() => {
