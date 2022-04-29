@@ -6,7 +6,7 @@ const funkcja1 = async (par1) => {
     const db = client.db('sf');
     const users = db.collection('users');
     const main = db.collection('main');
-    await client.connect();
+    //await client.connect();
     //users.find().toArray((err, data) => {
     // console.log(data);
     //})
