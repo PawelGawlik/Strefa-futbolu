@@ -6,17 +6,17 @@ const funkcja1 = async (par1) => {
     const db = client.db('sf');
     const users = db.collection('users');
     const main = db.collection('main');
-    await client.connect();
+    //client.connect();
     //users.find().toArray((err, data) => {
     // console.log(data);
     //})
     let user = "";
     let id2;
-    //client.connect(() => {
-    users.find().toArray((err, data) => {
-        id2 = data.length;
+    client.connect(() => {
+        users.find().toArray((err, data) => {
+            id2 = data.length;
+        })
     })
-    //})
     par1.post('/log', (req, res) => {
         //client.connect(() => {
         user = {
@@ -382,22 +382,22 @@ const funkcja1 = async (par1) => {
     })
     par1.get('/odw', async (req, res) => {
         //client.connect(() => {
-        // main.find().toArray((err, data) => {
-        // res.json(data[0]);
-        //})
-        // })
-        //await client.connect();
-        const c = await main.find().toArray();
-        res.json(c);
-    })
-    par1.post('/rejestracja', (req, res) => {
-        //client.connect(() => {
-        const rejestracja = req.body;
-        users.find(rejestracja).toArray((err, data) => {
-            res.send(data);
+        main.find().toArray((err, data) => {
+            res.json(data[0]);
+            //})
+            // })
+            //await client.connect();
+            //const c = await main.find().toArray();
+            //res.json(c);
         })
-        //})
-    })
-    //par1.use(express.static(path.join(__dirname, 'public')));
-}
+        par1.post('/rejestracja', (req, res) => {
+            //client.connect(() => {
+            const rejestracja = req.body;
+            users.find(rejestracja).toArray((err, data) => {
+                res.send(data);
+            })
+            //})
+        })
+        //par1.use(express.static(path.join(__dirname, 'public')));
+    }
 module.exports = funkcja1;
