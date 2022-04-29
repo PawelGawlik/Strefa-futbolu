@@ -273,7 +273,7 @@ const funkcja1 = (par1) => {
         //})
     })
     par1.get('/news.html/:wiad?', (req, res) => {
-        res.sendFile('news.html', { root: 'C:/users/gawy/onedrive/dokumenty/sf/public' });
+        res.sendFile('news.html', { root: '../public' });
     })
     par1.post('/news.html/:wiad', (req, res) => {
         if (user === "") {
