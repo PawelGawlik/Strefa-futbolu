@@ -387,10 +387,7 @@ const funkcja1 = async (par1) => {
         //})
         // })
         //await client.connect();
-        //const c = await main.find().toArray();
-        const c = {
-            name: "Paweł"
-        }
+        const c = await main.find().toArray();
         res.json(c);
     })
     par1.post('/rejestracja', (req, res) => {
