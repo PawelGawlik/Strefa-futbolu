@@ -27,5 +27,8 @@ app.use(cookieSession({
     maxAge: config.maxAgeSession
 }))
 app.use(cookieParser());
-index(app);
+const c = () => {
+    app.use(express.static(path.join(__dirname, 'public')));
+}
+index(app, c);
 //app.use(express.static(path.join(__dirname, 'public')));
