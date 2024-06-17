@@ -1,17 +1,19 @@
-$(document).ready( () => {
+$(document).ready(() => {
     const news = document.querySelector("div");
     const button = document.querySelectorAll("button");
     const input = document.querySelector("input");
-    fetch( '/style', {
-        method: "GET"
-    }).then( (res) => {
+    fetch('/style', {
+        method: "post",
+        body: document.location.search.split("=")[1],
+        headers: { 'Content-Type': 'text/plain' }
+    }).then((res) => {
         return res.json();
-    }).then((data)=>{
+    }).then((data) => {
         const news2 = data.newsnumber;
         let licznik = 1;
         let licznik2 = 1;
-        while(licznik2 <= Math.ceil(news2/10)){
-            while(licznik <= licznik2 * 10 && licznik <= news2){
+        while (licznik2 <= Math.ceil(news2 / 10)) {
+            while (licznik <= licznik2 * 10 && licznik <= news2) {
                 const suma = news2 + 1 - licznik;
                 const a = "news" + suma;
                 const b = "newstitle" + suma;
@@ -25,7 +27,7 @@ $(document).ready( () => {
                 const node1 = document.createTextNode(data[b]);
                 const node2 = document.createTextNode(data[c]);
                 const link = document.createElement("a");
-                link.setAttribute("href", `/news.html/${a}`);
+                link.setAttribute("href", `/news.html${document.location.search}&news=${a}`);
                 const node3 = document.createTextNode("Więcej");
                 header.appendChild(node1);
                 article.appendChild(node2);
@@ -37,37 +39,37 @@ $(document).ready( () => {
                 news.appendChild(div);
                 licznik++;
             }
-        licznik2++;
+            licznik2++;
         }
         $(".hidden1").show();
         let licznik3 = 1;
-        if(licznik3===Math.ceil(news2/10)){
+        if (licznik3 === Math.ceil(news2 / 10)) {
             $(button[0]).hide();
         }
-        if(licznik3===1){
+        if (licznik3 === 1) {
             $(button[1]).hide();
         }
         $(button[0]).click(() => {
-            if(licznik3<Math.ceil(news2/10)){
+            if (licznik3 < Math.ceil(news2 / 10)) {
                 $(`.hidden${licznik3}`).hide();
-                $(`.hidden${licznik3+1}`).show();
+                $(`.hidden${licznik3 + 1}`).show();
                 licznik3++;
             }
-            if(licznik3===Math.ceil(news2/10)){
+            if (licznik3 === Math.ceil(news2 / 10)) {
                 $(button[0]).hide();
             }
-            if(licznik3===2){
+            if (licznik3 === 2) {
                 $(button[1]).show();
             }
         })
         $(button[1]).click(() => {
             $(`.hidden${licznik3}`).hide();
-            $(`.hidden${licznik3-1}`).show();
+            $(`.hidden${licznik3 - 1}`).show();
             licznik3--;
-            if(licznik3===Math.ceil(news2/10)-1){
+            if (licznik3 === Math.ceil(news2 / 10) - 1) {
                 $(button[0]).show();
             }
-            if(licznik3===1){
+            if (licznik3 === 1) {
                 $(button[1]).hide();
             }
         })

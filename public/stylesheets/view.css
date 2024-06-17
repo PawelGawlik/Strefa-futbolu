@@ -1,22 +1,25 @@
-body{
-    min-height: 110vw; 
+body {
+    min-height: 110vw;
 }
-.main{
+
+.main {
     width: 98vw;
     height: 20.83vw;
     position: absolute;
     left: 50%;
-    transform:translateX(-50%);
+    transform: translateX(-50%);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
-.main>img{
+
+.main>img {
     height: 90%;
     margin-top: 1%;
     font-family: cursive;
 }
-h1{
+
+h1 {
     width: 60%;
     height: 90%;
     color: black;
@@ -24,30 +27,35 @@ h1{
     margin-top: 1%;
     text-align: center;
 }
-body>img{
+
+body>img {
     width: 10.42vw;
     position: absolute;
     top: 21.94vw;
     right: 27.78vw;
 }
-p{
+
+p {
     width: 24.31vw;
     position: absolute;
     top: 26vw;
     right: 2.08vw;
 }
-.opis{
+
+.opis {
     position: absolute;
     top: 32.64vw;
     right: 5.56vw;
 }
-.wiad{
+
+.wiad {
     position: absolute;
     top: 20.83vw;
     left: 2.08vw;
     text-align: center;
 }
-.news{
+
+.news {
     position: absolute;
     top: 29.17vw;
     left: 2.08vw;
@@ -55,20 +63,31 @@ p{
     flex-direction: column;
     justify-content: space-evenly;
 }
-header{
+
+header {
     font-size: 1.5em;
 }
-body>hr{
+
+body>hr {
     position: absolute;
     top: 104.17vw;
     left: 0.69vw;
     right: 0.69vw;
 }
-.autor, .odw{
+
+.autor,
+.odw {
     position: absolute;
     top: 104.86vw;
     left: 18vw;
 }
-.odw{
+
+.odw {
     left: 71vw;
+}
+
+.tabela {
+    position: absolute;
+    top: 60.64vw;
+    right: 5.56vw;
 }

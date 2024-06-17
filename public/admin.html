@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Strona Admina</title>
-        <meta charset="utf-8">
-        <meta name="description" content="Kreator stron piłkarskich">
-        <meta name="author" content="Paweł Gawlik">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes">
-        <link rel="icon" href="./images/sf.jpg">
-        <link rel="stylesheet" href="./stylesheets/admin.css">
-        <script src="./javascripts/jquery-3.5.1.js"></script>
-        <script src="./javascripts/admin.js" defer></script>
-    </head>
-    <body>
-        <div class="a">
-            <img src="images/sf.jpg">
-            <p></p>
-            <div class="b">
-                <a href="/main1">Przejdź na stronę</a>
-                <a href="/main2">Wyloguj</a>
-                <a href="/rozgrywki.html">Terminarz automatyczny</a>
-            </div>
+
+<head>
+    <title>Strona Admina</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Kreator stron piłkarskich">
+    <meta name="author" content="Paweł Gawlik">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+    <link rel="icon" href="./images/sf.jpg">
+    <link rel="stylesheet" href="./stylesheets/admin.css">
+    <script src="./javascripts/jquery-3.5.1.js"></script>
+    <script src="./javascripts/admin.js" defer></script>
+</head>
+
+<body>
+    <div class="a">
+        <img src="images/sf.jpg">
+        <p></p>
+        <div class="b">
+            <a href="/main1">Przejdź na stronę</a>
+            <a href="/main2">Wyloguj</a>
+            <a href="/start.html">Terminarz automatyczny</a>
         </div>
-        <div class="c">
+    </div>
+    <div class="c">
         <div class="hidden">
-            <p>Poniżej znajduje się formularz tworzący Twoją stronę. Nie musisz wypełniać wszystkich podpunktów. Jeśli chcesz dokonać zmiany na stronie, wystarczy wypełnić dany podpunkt. Każdą zmianę potwierdzasz naciskając przycisk "Wygeneruj stronę". W górnym prawym rogu znajduje się link do Twojej witryny. Jeśli chcesz umieścić na stronie wiadomość, wykorzystaj formularz na dole.</p>
+            <p>Poniżej znajduje się formularz tworzący Twoją stronę. Nie musisz wypełniać wszystkich podpunktów. Jeśli
+                chcesz dokonać zmiany na stronie, wystarczy wypełnić dany podpunkt. Każdą zmianę potwierdzasz naciskając
+                przycisk "Wygeneruj stronę". W górnym prawym rogu znajduje się link do Twojej witryny. Jeśli chcesz
+                umieścić na stronie wiadomość, wykorzystaj formularz na dole.</p>
         </div>
         <form method="post">
             <div>
@@ -91,7 +96,10 @@
             <button type="submit">Wygeneruj stronę</button>
         </form>
         <div class="visible">
-            <p>Po lewej stronie znajduje się formularz tworzący Twoją stronę. Nie musisz wypełniać wszystkich podpunktów. Jeśli chcesz dokonać zmiany na stronie, wystarczy wypełnić dany podpunkt. Każdą zmianę potwierdzasz naciskając przycisk "Wygeneruj stronę". Powyżej znajduje się link do Twojej witryny. Jeśli chcesz umieścić na stronie wiadomość, wykorzystaj formularz poniżej.</p>
+            <p>Po lewej stronie znajduje się formularz tworzący Twoją stronę. Nie musisz wypełniać wszystkich
+                podpunktów. Jeśli chcesz dokonać zmiany na stronie, wystarczy wypełnić dany podpunkt. Każdą zmianę
+                potwierdzasz naciskając przycisk "Wygeneruj stronę". Powyżej znajduje się link do Twojej witryny. Jeśli
+                chcesz umieścić na stronie wiadomość, wykorzystaj formularz poniżej.</p>
         </div>
         <form action="/news" method="post" class="news">
             <label>Tytuł wiadomości</label>
@@ -102,6 +110,7 @@
             <textarea name="news"></textarea>
             <button type="submit">Umieść na stronie</button>
         </form>
-        </div>
-    </body>
-</html> 
+    </div>
+</body>
+
+</html>

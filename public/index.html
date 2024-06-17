@@ -1,81 +1,84 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Strefa Futbolu</title>
-        <meta charset="utf-8">
-        <meta name="description" content="Kreator stron piłkarskich">
-        <meta name="author" content="Paweł Gawlik">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes">
-        <link rel="icon" href="./images/sf.jpg">
-        <link rel="stylesheet" href="./stylesheets/main.css">
-        <script src="./javascripts/jquery-3.5.1.js"></script>
-        <script src="./javascripts/main.js" defer></script>
-    </head>
-    <body>
-        <div class="b">
-            <img src="./images/sf.jpg">
-            <div class="a"></div>
-            <div class="c">
-                <p></p>
-                <P></P>
-                <p></p>
-                <p>Witaj w Strefie Futbolu. Jest to</p>
-                <p>portal piłkarski, który umożliwia</p>
-            </div>
+
+<head>
+    <title>Strefa Futbolu</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Kreator stron piłkarskich">
+    <meta name="author" content="Paweł Gawlik">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+    <link rel="icon" href="./images/sf.jpg">
+    <link rel="stylesheet" href="./stylesheets/main.css">
+    <script src="./javascripts/jquery-3.5.1.js"></script>
+    <script src="./javascripts/main.js" defer></script>
+</head>
+
+<body>
+    <div class="b">
+        <img src="./images/sf.jpg">
+        <div class="a"></div>
+        <div class="c">
+            <p></p>
+            <P></P>
+            <p></p>
+            <p>Witaj w Strefie Futbolu. Jest to</p>
+            <p>portal piłkarski, który umożliwia</p>
         </div>
-        <div class="strz">
-            <div class="strz1"></div>
-            <img src="./images/strz.jpg">
-            <div class="d">
-                <p>tworzenie stron rozgrywek,</p>
-                <p>klubów oraz piłkarzy. Zaprojektuj</p>
-                <p>swoją własną stronę całkowicie</p>
-                <p>za darmo!</p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-            </div>
+    </div>
+    <div class="strz">
+        <div class="strz1"></div>
+        <img src="./images/strz.jpg">
+        <div class="d">
+            <p>tworzenie stron rozgrywek,</p>
+            <p>klubów oraz piłkarzy. Zaprojektuj</p>
+            <p>swoją własną stronę całkowicie</p>
+            <p>za darmo!</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
         </div>
-        <div class="e">
-            <div class="f"></div>
-            <h1>STREFA FUTBOLU</h1>
-        </div>
-        <div class="j">
-            <form method="post" class="h i">
-                <p>Rejestracja</p>
-                <label>Login</label><input name="login">
-                <label>Hasło</label><input type="password" name="password">
-                <label>Powtórz hasło</label><input type="password" name="password2">
-                <label>Mail</label><input type="email" name="mail">
-                <button>Wyślij</button>
-            </form>
-            <form action="/log" method="post" class="h">
-                <p>Logowanie</p>
-                <p></p>
-                <label>Login</label><input name="login2">
-                <p></p>
-                <label>Hasło</label><input type="password" name="password3">
-                <button>Wyślij</button>
-                <a href="">Odzyskaj hasło</a>
-                <p></p>
-            </form>
-            <form action="/links.pug" method="get" class="h g">
-                <p>Wyszukiwarka</p>
-                <p>stron</p>
-                <p></p>
-                <p></p>
-                <input name="fraza">
-                <button>Szukaj</button>
-                <p></p>
-                <p></p>
-            </form>
-        </div>
-        <hr>
-        <div class="stopka">
-            <p>Autor: Paweł Gawlik</p>
-            <p>Odwiedziny: <span>0</span></p>
-        </div>
-    </body>
-</html> 
+    </div>
+    <div class="e">
+        <div class="f"></div>
+        <h1>STREFA FUTBOLU</h1>
+    </div>
+    <div class="j">
+        <form action="/" method="post" class="h i">
+            <p>Rejestracja</p>
+            <label>Login</label><input name="login">
+            <label>Hasło</label><input type="password" name="password">
+            <label>Powtórz hasło</label><input type="password" name="password2">
+            <label>Mail</label><input type="email" name="mail">
+            <button>Wyślij</button>
+        </form>
+        <form action="/log" method="post" class="h">
+            <p>Logowanie</p>
+            <p></p>
+            <label>Login</label><input name="login2">
+            <p></p>
+            <label>Hasło</label><input type="password" name="password3">
+            <button>Wyślij</button>
+            <a href="">Odzyskaj hasło</a>
+            <p></p>
+        </form>
+        <form action="/links.pug" method="get" class="h g">
+            <p>Wyszukiwarka</p>
+            <p>stron</p>
+            <p></p>
+            <p></p>
+            <input name="fraza">
+            <button>Szukaj</button>
+            <p></p>
+            <p></p>
+        </form>
+    </div>
+    <hr>
+    <div class="stopka">
+        <p>Autor: Paweł Gawlik</p>
+        <p>Odwiedziny: <span>0</span></p>
+    </div>
+</body>
+
+</html>
